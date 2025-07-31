@@ -225,32 +225,60 @@
   padding: 1rem;
 }
 .cards-container .cards-grid {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
+  justify-content: center;
 }
 @media (min-width: 1024px) {
   .cards-container .cards-grid {
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    column-gap: 5rem;
-    row-gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .cards-container .cards-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
+    gap: 1rem;
   }
 }
 @media (max-width: 767px) {
   .cards-container .cards-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
+    gap: 1rem;
   }
 }
+.cards-container .cards-row {
+  display: flex;
+  gap: 1rem;
+}
+.cards-container .cards-row.three {
+  justify-content: space-between;
+}
+.cards-container .cards-row.three .card {
+  flex: 0 0 calc(33.33% - 1rem);
+  max-width: calc(33.33% - 1rem);
+}
+.cards-container .cards-row.two {
+  justify-content: center;
+}
+.cards-container .cards-row.two .card {
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+.cards-container .cards-row.one {
+  justify-content: center;
+}
+.cards-container .cards-row.one .card {
+  flex: 0 0 30%;
+  max-width: 30%;
+}
 .cards-container .card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: none;
+  border-radius: 0px;
   overflow: hidden;
   text-align: center;
   background: #fff;
@@ -259,4 +287,21 @@
 .table td,
 .table th {
   background-color: #fbf9f9 !important;
+}
+
+.color-box {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .d-desktop-none {
+    display: none !important;
+  }
+}
+@media (max-width: 1023px) {
+  .d-desktop-block {
+    display: block !important;
+  }
 }

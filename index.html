@@ -14,16 +14,16 @@
     <link rel="stylesheet" href="css/index.css" />
     <title>mockups</title>
   </head>
-  <body>
-    <header
-      class="header py-3 bg-light text-black"
-      style="background-color: #fbf9f9"
-    >
-      <div class="container-fluid border-bottom border-2 py-1">
+  <body class="px-3">
+    <header class="header mb-3 text-black">
+      <div
+        class="container-fluid border-bottom border-2 mb-1 align-items-center"
+        style="background-color: #fbf9f9; height: 70px"
+      >
         <div class="row align-items-center">
           <!-- Left -->
           <div class="col-3 d-flex align-items-center">
-            <button class="menu-btn btn btn-light me-2">☰</button>
+            <button class="menu-btn btn me-2">☰</button>
             <h1 class="logo-left m-0">CULB MONACO</h1>
           </div>
 
@@ -51,14 +51,14 @@
           </div>
         </div>
       </div>
-      <p class="offers text-center py-3 border-bottom border-2">
+      <p class="offers text-center py-3 border-bottom border-2 bg-white">
         FREE SHIPPING ON ORDERS OF $150 OR MORE WITH CODE <b>FREESHIP. </b
         ><a href="#" class="text-black"> See details</a>
       </p>
     </header>
 
     <!-- start the main content -->
-    <main class="bg-light container-fluid">
+    <main class="container-fluid">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
@@ -78,10 +78,10 @@
         <!-- Left (desktop only) -->
         <div class="col-3 show-filter">
           <button
-            class="border-0 bg-light d-flex align-items-center gap-2 w-100"
+            class="border-0 bg-white d-flex align-items-center gap-2 w-100"
           >
             <i class="bi bi-sliders"></i>
-            Show Filter
+            SHOW FILTER
           </button>
         </div>
 
@@ -115,20 +115,20 @@
       <!-- for mobile and tablet-->
       <div class="row">
         <div class="col-12 filter-btn-mobile text-center mt-3">
-          <button class="w-100 p-3 bg-light">REFINE</button>
+          <button class="w-100 p-3 bg-white">REFINE</button>
         </div>
       </div>
       <!--  here the sidbar and the cards list -->
       <div class="row main-content">
         <!-- Sidebar -->
-        <aside class="col-3 sidebar bg-white p-3 hidden bg-light">
+        <aside class="col-3 sidebar bg-white p-3 hidden border-0">
           <div
-            class="d-flex justify-content-between align-items-center mb-3 d-lg-none"
+            class="d-flex justify-content-between align-items-center mb-3 d-desktop-none"
           >
             <h5 class="m-0">REFINE</h5>
             <div>
               <button
-                class="btn btn-md rounded-0 btn-light border-1 border-black"
+                class="btn btn-md rounded-0 btn-white border-1 border-black"
               >
                 Clear
               </button>
@@ -137,7 +137,7 @@
               </button>
             </div>
           </div>
-          <select class="form-select my-1 d-lg-none">
+          <select class="form-select my-1 d-desktop-none">
             <option selected disabled>SORT BY</option>
             <option value="1">Newest</option>
             <option value="2">Price: Low to High</option>
@@ -204,7 +204,7 @@
           <!-- endfilter section -->
         </aside>
         <!-- Cards container -->
-        <section class="cards-container">
+        <section class="col-12 cards-container">
           <div class="cards-grid">
             <div class="card">
               <img src="images/image1.jpg" class="card-img-top" alt="dress" />
@@ -229,28 +229,16 @@
                 <p class="card-text">50$</p>
                 <div class="d-flex gap-2 w-100 justify-content-center">
                   <div
-                    style="
-                      width: 25px;
-                      height: 25px;
-                      background: rgb(69, 65, 65);
-                      cursor: pointer;
-                    "
+                    class="color-box"
+                    style="background: rgb(69, 65, 65)"
                   ></div>
                   <div
-                    style="
-                      width: 25px;
-                      height: 25px;
-                      background: rgb(23, 23, 163);
-                      cursor: pointer;
-                    "
+                    class="color-box"
+                    style="background: rgb(23, 23, 163)"
                   ></div>
                   <div
-                    style="
-                      width: 25px;
-                      height: 25px;
-                      background: rgb(255, 255, 255);
-                      cursor: pointer;
-                    "
+                    class="color-box"
+                    style="background: rgb(255, 255, 255)"
                   ></div>
                 </div>
               </div>
@@ -262,28 +250,16 @@
                 <p class="card-text">150$</p>
                 <div class="d-flex gap-2 w-100 justify-content-center">
                   <div
-                    style="
-                      width: 25px;
-                      height: 25px;
-                      background: rgb(69, 65, 65);
-                      cursor: pointer;
-                    "
+                    class="color-box"
+                    style="background: rgb(69, 65, 65)"
                   ></div>
                   <div
-                    style="
-                      width: 25px;
-                      height: 25px;
-                      background: rgb(23, 23, 163);
-                      cursor: pointer;
-                    "
+                    class="color-box"
+                    style="background: rgb(23, 23, 163)"
                   ></div>
                   <div
-                    style="
-                      width: 25px;
-                      height: 25px;
-                      background: rgb(141, 137, 137);
-                      cursor: pointer;
-                    "
+                    class="color-box"
+                    style="background: rgb(141, 137, 137)"
                   ></div>
                 </div>
               </div>
@@ -309,12 +285,43 @@
                 <p class="card-text">200$</p>
               </div>
             </div>
+            <div class="card">
+              <img src="images/image5.jpg" class="card-img-top" alt="dress" />
+              <div class="card-body">
+                <p class="card-title">Sample Dress</p>
+                <p class="card-text">300$</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/image5.jpg" class="card-img-top" alt="dress" />
+              <div class="card-body">
+                <p class="card-title">Sample Dress</p>
+                <p class="card-text">300$</p>
+              </div>
+            </div>
             <!-- more cards... -->
+          </div>
+          <div class="end-Of-Main-Content mt-5 mb-3 d-flex w-100">
+            <div class="col-3navbar-area">
+              <nav class="nav justify-content-end">
+                <a class="nav-link text-black" href="#">1-30 of 99 item</a>
+                <a
+                  class="nav-link text-black text-decoration-underline"
+                  href="#"
+                  >View all</a
+                >
+              </nav>
+            </div>
+            <div class="col-9 d-flex justify-content-center">
+              <button class="btn rounded-0 border-3 border-black w-50">
+                SHOW MORE
+              </button>
+            </div>
           </div>
         </section>
       </div>
       <div class="overlay"></div>
-      <div class="end-Of-Main-Content mt-5 mb-3 d-flex w-100">
+      <!-- <div class="end-Of-Main-Content mt-5 mb-3 d-flex w-100">
         <div class="col-3navbar-area">
           <nav class="nav justify-content-end">
             <a class="nav-link text-black" href="#">1-30 of 99 item</a>
@@ -328,7 +335,7 @@
             SHOW MORE
           </button>
         </div>
-      </div>
+      </div> -->
     </main>
     <!-- footer  -->
     <footer class="mt-5 border-top border-1 border-black pt-3 px-3">
@@ -452,5 +459,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="index.js"></script>
     <script src="filterControl.js"></script>
+    <script src="layout.js"></script>
   </body>
 </html>

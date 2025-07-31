@@ -1,6 +1,9 @@
 // variables
 @use "breakpoints";
 
+// base layout
+@use "base";
+
 // components
 @use "components/header";
 @use "components/headerOfMain";
@@ -8,3 +11,7 @@
 @use "components/overlay";
 @use "components/card";
 @use "components/table";
+@use "components/colorBox";
+
+// utilites
+@use "utilites";

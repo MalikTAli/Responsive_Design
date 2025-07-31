@@ -1,0 +1,11 @@
+@media (min-width: 1024px) {
+  .d-desktop-none {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .d-desktop-block {
+    display: block !important;
+  }
+}
