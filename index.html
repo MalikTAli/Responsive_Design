@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>mockups</title>
+  </head>
+  <body>
+    <header
+      class="header py-3 bg-light text-black"
+      style="background-color: #fbf9f9"
+    >
+      <div class="container-fluid border-bottom border-2 py-1">
+        <div class="row align-items-center">
+          <!-- Left -->
+          <div class="col-3 d-flex align-items-center">
+            <button class="menu-btn btn btn-light me-2">☰</button>
+            <h1 class="logo-left m-0">CULB MONACO</h1>
+          </div>
+
+          <!-- Center -->
+          <div class="col-6 d-flex justify-content-center">
+            <!-- logo for mobile   -->
+            <h1 class="logo-center m-0">CULB MONACO</h1>
+
+            <!-- nav just for desktop  -->
+            <nav class="nav gap-1">
+              <a class="nav-link text-black" href="#">NEW ARRIVALS</a>
+              <a class="nav-link text-black" href="#">WOMEN</a>
+              <a class="nav-link text-black" href="#">MEN</a>
+              <a class="nav-link text-black" href="#">SALE</a>
+              <a class="nav-link text-black" href="#">FEATURES</a>
+              <a class="nav-link text-black" href="#">HOLIDAY SHOP</a>
+            </nav>
+          </div>
+
+          <!-- Right -->
+          <div class="col-3 d-flex justify-content-end gap-3 header-icons">
+            <a href="#" class="text-black"><i class="bi bi-heart"></i></a>
+            <a href="#" class="text-black"><i class="bi bi-search"></i></a>
+            <a href="#" class="text-black"><i class="bi bi-person"></i></a>
+          </div>
+        </div>
+      </div>
+      <p class="offers text-center py-3 border-bottom border-2">
+        FREE SHIPPING ON ORDERS OF $150 OR MORE WITH CODE <b>FREESHIP. </b
+        ><a href="#" class="text-black"> See details</a>
+      </p>
+    </header>
+
+    <!-- start the main content -->
+    <main class="bg-light container-fluid">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#" class="text-black text-decoration-none">Womens</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="#" class="text-black text-decoration-none">Clothing</a>
+          </li>
+          <li class="breadcrumb-item active text-secondary" aria-current="page">
+            Dresses
+          </li>
+        </ol>
+      </nav>
+
+      <!-- here the work -->
+      <div class="row align-items-center main-bar">
+        <!-- Left (desktop only) -->
+        <div class="col-3 show-filter">
+          <button
+            class="border-0 bg-light d-flex align-items-center gap-2 w-100"
+          >
+            <i class="bi bi-sliders"></i>
+            Show Filter
+          </button>
+        </div>
+
+        <!-- Center -->
+        <div class="col-6 text-center title">
+          <h2>Dresses</h2>
+        </div>
+
+        <!-- Right (desktop + tablet) -->
+        <div class="col-3 navbar-area">
+          <nav class="nav justify-content-end">
+            <a class="nav-link text-black" href="#">1-30 of 99 item</a>
+            <a class="nav-link text-black text-decoration-underline" href="#"
+              >View all</a
+            >
+            <select
+              class="form-select form-select-sm border-0 bg-transparent p-0"
+              aria-label="Sort options"
+              style="width: auto; cursor: pointer"
+            >
+              <option selected>Newest</option>
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
+              <option value="price-low-high">Price: Low to High</option>
+              <option value="price-high-low">Price: High to Low</option>
+            </select>
+          </nav>
+        </div>
+      </div>
+
+      <!-- for mobile and tablet-->
+      <div class="row">
+        <div class="col-12 filter-btn-mobile text-center mt-3">
+          <button class="w-100 p-3 bg-light">REFINE</button>
+        </div>
+      </div>
+      <!--  here the sidbar and the cards list -->
+      <div class="row main-content">
+        <!-- Sidebar -->
+        <aside class="col-3 sidebar bg-white p-3 hidden bg-light">
+          <div
+            class="d-flex justify-content-between align-items-center mb-3 d-lg-none"
+          >
+            <h5 class="m-0">REFINE</h5>
+            <div>
+              <button
+                class="btn btn-md rounded-0 btn-light border-1 border-black"
+              >
+                Clear
+              </button>
+              <button class="btn btn-md rounded-0 btn-dark close-sidebar">
+                Done
+              </button>
+            </div>
+          </div>
+          <select class="form-select my-1 d-lg-none">
+            <option selected disabled>SORT BY</option>
+            <option value="1">Newest</option>
+            <option value="2">Price: Low to High</option>
+            <option value="3">Price: High to Low</option>
+            <option value="4">Best Sellers</option>
+          </select>
+          <div class="filter-section">
+            <!-- f1 -->
+            <div
+              class="filter-header d-flex justify-content-between align-items-center border-bottom pb-2 mt-3"
+            >
+              <h6>Type</h6>
+              <i class="bi bi-plus toggle-icon fs-4"></i>
+            </div>
+            <ul id="type-list" class="list-unstyled d-none">
+              <li class="mt-2"><input type="checkbox" /> Maxi (19)</li>
+              <li class="mt-2"><input type="checkbox" /> Midi (9)</li>
+              <li class="mt-2"><input type="checkbox" /> Mini (19)</li>
+            </ul>
+
+            <!-- f2 -->
+            <div
+              class="filter-header d-flex justify-content-between align-items-center border-bottom pb-2 mt-3"
+            >
+              <h6>Size</h6>
+              <i class="bi bi-plus toggle-icon fs-4"></i>
+            </div>
+            <ul id="type-list" class="list-unstyled d-none">
+              <li class="mt-2"><input type="checkbox" />S</li>
+              <li class="mt-2"><input type="checkbox" /> M</li>
+              <li class="mt-2"><input type="checkbox" /> L</li>
+              <li class="mt-2"><input type="checkbox" /> XL</li>
+              <li class="mt-2"><input type="checkbox" /> XXL</li>
+            </ul>
+
+            <!-- f3 -->
+            <div
+              class="filter-header d-flex justify-content-between align-items-center border-bottom pb-2 mt-3"
+            >
+              <h6>Color</h6>
+              <i class="bi bi-plus toggle-icon fs-4"></i>
+            </div>
+            <ul id="type-list" class="list-unstyled d-none">
+              <li class="mt-2"><input type="checkbox" />Red</li>
+              <li class="mt-2"><input type="checkbox" />Blue</li>
+              <li class="mt-2"><input type="checkbox" />white</li>
+              <li class="mt-2"><input type="checkbox" />black</li>
+            </ul>
+
+            <!-- f4 -->
+            <div
+              class="filter-header d-flex justify-content-between align-items-center border-bottom pb-2 mt-3"
+            >
+              <h6>Price</h6>
+              <i class="bi bi-plus toggle-icon fs-4"></i>
+            </div>
+            <ul id="type-list" class="list-unstyled d-none">
+              <li class="mt-2"><input type="checkbox" />50$-100$</li>
+              <li class="mt-2"><input type="checkbox" />100$-200$</li>
+              <li class="mt-2"><input type="checkbox" />200$-300$</li>
+              <li class="mt-2"><input type="checkbox" />+300$</li>
+            </ul>
+          </div>
+          <!-- endfilter section -->
+        </aside>
+        <!-- Cards container -->
+        <section class="cards-container">
+          <div class="cards-grid">
+            <div class="card">
+              <img src="images/image1.jpg" class="card-img-top" alt="dress" />
+              <div class="card-body">
+                <p class="card-title">Sample Dress</p>
+                <p class="card-text">50$</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="images/image2.jpg" class="card-img-top" alt="dress" />
+              <div class="card-body">
+                <p class="card-title">Sample Dress</p>
+                <p class="card-text">50$</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="images/image4.jpg" class="card-img-top" alt="dress" />
+              <div class="card-body">
+                <p class="card-title">Sample Dress</p>
+                <p class="card-text">50$</p>
+                <div class="d-flex gap-2 w-100 justify-content-center">
+                  <div
+                    style="
+                      width: 25px;
+                      height: 25px;
+                      background: rgb(69, 65, 65);
+                      cursor: pointer;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      width: 25px;
+                      height: 25px;
+                      background: rgb(23, 23, 163);
+                      cursor: pointer;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      width: 25px;
+                      height: 25px;
+                      background: rgb(255, 255, 255);
+                      cursor: pointer;
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/image3.jpg" class="card-img-top" alt="dress" />
+              <div class="card-body">
+                <p class="card-title">Sample Dress</p>
+                <p class="card-text">150$</p>
+                <div class="d-flex gap-2 w-100 justify-content-center">
+                  <div
+                    style="
+                      width: 25px;
+                      height: 25px;
+                      background: rgb(69, 65, 65);
+                      cursor: pointer;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      width: 25px;
+                      height: 25px;
+                      background: rgb(23, 23, 163);
+                      cursor: pointer;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      width: 25px;
+                      height: 25px;
+                      background: rgb(141, 137, 137);
+                      cursor: pointer;
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/image5.jpg" class="card-img-top" alt="dress" />
+              <div class="card-body">
+                <p class="card-title">Sample Dress</p>
+                <p class="card-text">300$</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/image3.jpg" class="card-img-top" alt="dress" />
+              <div class="card-body">
+                <p class="card-title">Sample Dress</p>
+                <p class="card-text">150$</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/image1.jpg" class="card-img-top" alt="dress" />
+              <div class="card-body">
+                <p class="card-title">Sample Dress</p>
+                <p class="card-text">200$</p>
+              </div>
+            </div>
+            <!-- more cards... -->
+          </div>
+        </section>
+      </div>
+      <div class="overlay"></div>
+      <div class="end-Of-Main-Content mt-5 mb-3 d-flex w-100">
+        <div class="col-3navbar-area">
+          <nav class="nav justify-content-end">
+            <a class="nav-link text-black" href="#">1-30 of 99 item</a>
+            <a class="nav-link text-black text-decoration-underline" href="#"
+              >View all</a
+            >
+          </nav>
+        </div>
+        <div class="col-9 d-flex justify-content-center">
+          <button class="btn rounded-0 border-3 border-black w-50">
+            SHOW MORE
+          </button>
+        </div>
+      </div>
+    </main>
+    <!-- footer  -->
+    <footer class="mt-5 border-top border-1 border-black pt-3 px-3">
+      <div>
+        <p class="fs-5">Best Dresses</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem nesciunt
+          provident blanditiis velit cum repudiandae, quod corrupti. Impedit
+          doloremque, illo quia suscipit dignissimos fugit veniam magnam fugiat
+          aut cupiditate totam?
+        </p>
+      </div>
+      <!-- social -->
+      <div class="social d-flex gap-3 justify-content-center">
+        <p class="fs-3">#CULBMONACO</p>
+        <a
+          href="https://www.instagram.com"
+          target="_blank"
+          class="text-dark fs-4"
+        >
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a
+          href="https://www.facebook.com"
+          target="_blank"
+          class="text-dark fs-4"
+        >
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a
+          href="https://www.twitter.com"
+          target="_blank"
+          class="text-dark fs-4"
+        >
+          <i class="bi bi-twitter"></i>
+        </a>
+        <a href="https://www.tiktok.com" target="_blank" class="text-dark fs-4">
+          <i class="bi bi-tiktok"></i>
+        </a>
+      </div>
+      <!-- table -->
+      <table class="table table-borderless text-center w-100">
+        <colgroup>
+          <col style="width: 20%" />
+          <col style="width: 20%" />
+          <col style="width: 20%" />
+          <col style="width: 40%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <td>SUPPORT</td>
+            <td>SHIPPING & RETURNS</td>
+            <td>ABOUT CLUB</td>
+            <td>LET'S KEEP IN TOUCH</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Email Us</td>
+            <td>Track Your Order</td>
+            <td>Our Story</td>
+            <td>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search" />
+                <button class="btn bg-black text-white" type="submit">
+                  SUBMIT
+                </button>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>FAQ</td>
+            <td>Shipping Rates</td>
+            <td>Store Locator</td>
+            <td>
+              Sign up to receive emails on everything new, special offersm and
+              exclusive events
+            </td>
+          </tr>
+          <tr>
+            <td>Gift Cards</td>
+            <td>Returns & Exchanges</td>
+            <td>Events</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Tel. 1-888-7-33-6410</td>
+            <td>International Shipping</td>
+            <td>Careers</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Student Discount</td>
+            <td>Refer-A-Friend</td>
+            <td>California Transparency Act</td>
+            <td></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4" class="text-center">
+              <div class="d-flex justify-content-center gap-4">
+                <span class="text-muted">© 2018 Club Monaco Cop</span>
+                <span class="text-muted">Site Map</span>
+                <span class="text-muted">Privacy Notice</span>
+                <span class="text-muted">Term of Us</span>
+                <span class="text-muted"
+                  >United State <i class="bi bi-globe-americas"></i
+                ></span>
+              </div>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="index.js"></script>
+    <script src="filterControl.js"></script>
+  </body>
+</html>

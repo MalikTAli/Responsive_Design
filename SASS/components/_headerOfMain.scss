@@ -1,0 +1,88 @@
+@use "../breakpoints" as bp;
+
+.main-bar {
+  margin-bottom: 1rem;
+
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  // --- Desktop ---
+  @include bp.desktop {
+    .show-filter {
+      display: block;
+      text-align: left;
+    }
+
+    .title {
+      flex: 1;
+      text-align: center;
+    }
+
+    .navbar-area {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  // --- Tablet ---
+  @include bp.tablet {
+    .show-filter {
+      display: none;
+    }
+
+    .title {
+      flex: 1;
+      text-align: left;
+    }
+
+    .navbar-area {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  // --- Mobile ---
+  @include bp.mobile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .show-filter {
+      display: none;
+    }
+
+    .title,
+    .navbar-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+// FOR MOBILE AND TABLET FILTER BUTTON
+.filter-btn-mobile {
+  display: none;
+
+  @include bp.mobile {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  @include bp.tablet {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  @include bp.desktop {
+    display: none;
+  }
+}

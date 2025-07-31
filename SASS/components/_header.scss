@@ -1,0 +1,85 @@
+@use "../breakpoints" as bp;
+
+.header {
+  padding: 1rem 0;
+
+  .logo-left,
+  .logo-center {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .nav {
+    display: flex;
+    gap: 1rem;
+
+    @include bp.mobile {
+      display: none;
+    }
+    @include bp.tablet {
+      display: none;
+    }
+    @include bp.desktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .menu-btn {
+    display: none;
+
+    @include bp.mobile {
+      display: block;
+    }
+    @include bp.tablet {
+      display: block;
+    }
+    @include bp.desktop {
+      display: none;
+    }
+  }
+
+  .header-icons {
+    font-size: 1.2rem;
+    a {
+      color: black;
+      &:hover {
+        color: #0d6efd;
+      }
+    }
+  }
+
+  // --- Layout Adjustments ---
+  @include bp.desktop {
+    .logo-left {
+      display: block;
+      text-align: left;
+    }
+    .logo-center {
+      display: none;
+    }
+  }
+
+  @include bp.mobile {
+    .logo-left {
+      display: none;
+    }
+    .logo-center {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  @include bp.tablet {
+    .logo-left {
+      display: none;
+    }
+    .logo-center {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
