@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsGrid.innerHTML = "";
 
     if (screenWidth >= 1023) {
-      // Desktop فقط (bootstrap lg = 992px+)
       const pattern = [3, 2];
       let patternIndex = 0;
       let i = 0;
@@ -40,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
       allCards.forEach((card) => cardsGrid.appendChild(card));
     }
   }
-
   buildGrid();
 
   // at each chnage in size

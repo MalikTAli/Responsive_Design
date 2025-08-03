@@ -46,11 +46,46 @@
           <!-- Right -->
           <div class="col-3 d-flex justify-content-end gap-3 header-icons">
             <a href="#" class="text-black"><i class="bi bi-heart"></i></a>
-            <a href="#" class="text-black"><i class="bi bi-search"></i></a>
-            <a href="#" class="text-black"><i class="bi bi-person"></i></a>
+            <a href="#" class="text-black" id="searchToggle"
+              ><i class="bi bi-search"></i
+            ></a>
+            <!-- Person Icon with Dropdown -->
+            <div class="dropdown">
+              <a
+                href="#"
+                class="text-black dropdown-toggle"
+                id="personDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-person fs-4"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="personDropdown">
+                <li>
+                  <a class="dropdown-item" href="#" id="loginBtn">Log in</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Create account</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+      <!-- search -->
+      <div class="search-container d-none">
+        <div class="search-box">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search for products..."
+            aria-label="Search"
+          />
+          <button class="btn btn-dark px-4" type="button">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
+      <!-- end search -->
       <p class="offers text-center py-3 border-bottom border-2 bg-white">
         FREE SHIPPING ON ORDERS OF $150 OR MORE WITH CODE <b>FREESHIP. </b
         ><a href="#" class="text-black"> See details</a>
@@ -93,10 +128,16 @@
         <!-- Right (desktop + tablet) -->
         <div class="col-3 navbar-area">
           <nav class="nav justify-content-end">
-            <a class="nav-link text-black" href="#">1-30 of 99 item</a>
-            <a class="nav-link text-black text-decoration-underline" href="#"
-              >View all</a
+            <a id="itemsCount" class="nav-link text-black" href="#"
+              >1-30 of 99 item</a
             >
+            <button
+              id="viewAllTop"
+              class="nav-link text-black text-decoration-underline"
+              href="#"
+            >
+              View all
+            </button>
             <select
               class="form-select form-select-sm border-0 bg-transparent p-0"
               aria-label="Sort options"
@@ -153,9 +194,27 @@
               <i class="bi bi-plus toggle-icon fs-4"></i>
             </div>
             <ul id="type-list" class="list-unstyled d-none">
-              <li class="mt-2"><input type="checkbox" /> Maxi (19)</li>
-              <li class="mt-2"><input type="checkbox" /> Midi (9)</li>
-              <li class="mt-2"><input type="checkbox" /> Mini (19)</li>
+              <li class="mt-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="Maxi(19)" />
+                  <span class="checkmark"></span>
+                  Maxi(19)
+                </label>
+              </li>
+              <li class="mt-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="Midi(9)" />
+                  <span class="checkmark"></span>
+                  Midi(9)
+                </label>
+              </li>
+              <li class="mt-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="Mini(19)" />
+                  <span class="checkmark"></span>
+                  Mini(19)
+                </label>
+              </li>
             </ul>
 
             <!-- f2 -->
@@ -166,11 +225,41 @@
               <i class="bi bi-plus toggle-icon fs-4"></i>
             </div>
             <ul id="type-list" class="list-unstyled d-none">
-              <li class="mt-2"><input type="checkbox" />S</li>
-              <li class="mt-2"><input type="checkbox" /> M</li>
-              <li class="mt-2"><input type="checkbox" /> L</li>
-              <li class="mt-2"><input type="checkbox" /> XL</li>
-              <li class="mt-2"><input type="checkbox" /> XXL</li>
+              <li class="mt-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="S" />
+                  <span class="checkmark"></span>
+                  S
+                </label>
+              </li>
+              <li class="mt-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="M" />
+                  <span class="checkmark"></span>
+                  M
+                </label>
+              </li>
+              <li class="mt-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="L" />
+                  <span class="checkmark"></span>
+                  L
+                </label>
+              </li>
+              <li class="mt-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="XL" />
+                  <span class="checkmark"></span>
+                  XL
+                </label>
+              </li>
+              <li class="mt-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="XXL" />
+                  <span class="checkmark"></span>
+                  XXL
+                </label>
+              </li>
             </ul>
 
             <!-- f3 -->
@@ -181,10 +270,34 @@
               <i class="bi bi-plus toggle-icon fs-4"></i>
             </div>
             <ul id="type-list" class="list-unstyled d-none">
-              <li class="mt-2"><input type="checkbox" />Red</li>
-              <li class="mt-2"><input type="checkbox" />Blue</li>
-              <li class="mt-2"><input type="checkbox" />white</li>
-              <li class="mt-2"><input type="checkbox" />black</li>
+              <li class="mt-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="Red" />
+                  <span class="checkmark"></span>
+                  Red
+                </label>
+              </li>
+              <li class="mt-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="Blue" />
+                  <span class="checkmark"></span>
+                  Blue
+                </label>
+              </li>
+              <li class="mt-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="White" />
+                  <span class="checkmark"></span>
+                  White
+                </label>
+              </li>
+              <li class="mt-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="Black" />
+                  <span class="checkmark"></span>
+                  Black
+                </label>
+              </li>
             </ul>
 
             <!-- f4 -->
@@ -195,27 +308,73 @@
               <i class="bi bi-plus toggle-icon fs-4"></i>
             </div>
             <ul id="type-list" class="list-unstyled d-none">
-              <li class="mt-2"><input type="checkbox" />50$-100$</li>
-              <li class="mt-2"><input type="checkbox" />100$-200$</li>
-              <li class="mt-2"><input type="checkbox" />200$-300$</li>
-              <li class="mt-2"><input type="checkbox" />+300$</li>
+              <li class="mt-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="50$-100$" />
+                  <span class="checkmark"></span>
+                  50$-100$
+                </label>
+              </li>
+              <li class="mt-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="100$-200$" />
+                  <span class="checkmark"></span>
+                  100$-200$
+                </label>
+              </li>
+              <li class="mt-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="200$-300$" />
+                  <span class="checkmark"></span>
+                  200$-300$
+                </label>
+              </li>
+              <li class="mt-2">
+                <label class="custom-checkbox">
+                  <input type="checkbox" value="+300$" />
+                  <span class="checkmark"></span>
+                  +300$
+                </label>
+              </li>
             </ul>
           </div>
           <!-- endfilter section -->
+          <div class="mt-5">
+            <p>items:</p>
+            <div id="selected-options" class="d-flex flex-wrap mt-1"></div>
+          </div>
         </aside>
         <!-- Cards container -->
         <section class="col-12 cards-container">
           <div class="cards-grid">
             <div class="card">
               <img src="images/image1.jpg" class="card-img-top" alt="dress" />
+              <i class="bi bi-heart like-icon"></i>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">50$</p>
+                <div class="swatch-container">
+                  <button class="prev">-</button>
+                  <div class="swatch-wrapper">
+                    <div class="swatches">
+                      <div class="swatch" style="background-color: red"></div>
+                      <div class="swatch" style="background-color: blue"></div>
+                      <div class="swatch" style="background-color: green"></div>
+                      <div
+                        class="swatch"
+                        style="background-color: yellow"
+                      ></div>
+                      <div class="swatch" style="background-color: black"></div>
+                    </div>
+                  </div>
+                  <button class="next">+</button>
+                </div>
               </div>
             </div>
 
             <div class="card">
               <img src="images/image2.jpg" class="card-img-top" alt="dress" />
+              <i class="bi bi-heart like-icon"></i>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">50$</p>
@@ -224,48 +383,39 @@
 
             <div class="card">
               <img src="images/image4.jpg" class="card-img-top" alt="dress" />
+              <i class="bi bi-heart like-icon"></i>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">50$</p>
-                <div class="d-flex gap-2 w-100 justify-content-center">
-                  <div
-                    class="color-box"
-                    style="background: rgb(69, 65, 65)"
-                  ></div>
-                  <div
-                    class="color-box"
-                    style="background: rgb(23, 23, 163)"
-                  ></div>
-                  <div
-                    class="color-box"
-                    style="background: rgb(255, 255, 255)"
-                  ></div>
-                </div>
               </div>
             </div>
             <div class="card">
               <img src="images/image3.jpg" class="card-img-top" alt="dress" />
+              <i class="bi bi-heart like-icon"></i>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">150$</p>
-                <div class="d-flex gap-2 w-100 justify-content-center">
-                  <div
-                    class="color-box"
-                    style="background: rgb(69, 65, 65)"
-                  ></div>
-                  <div
-                    class="color-box"
-                    style="background: rgb(23, 23, 163)"
-                  ></div>
-                  <div
-                    class="color-box"
-                    style="background: rgb(141, 137, 137)"
-                  ></div>
+                <div class="swatch-container">
+                  <button class="prev">-</button>
+                  <div class="swatch-wrapper">
+                    <div class="swatches">
+                      <div class="swatch" style="background-color: red"></div>
+                      <div class="swatch" style="background-color: blue"></div>
+                      <div class="swatch" style="background-color: green"></div>
+                      <div
+                        class="swatch"
+                        style="background-color: yellow"
+                      ></div>
+                      <div class="swatch" style="background-color: black"></div>
+                    </div>
+                  </div>
+                  <button class="next">+</button>
                 </div>
               </div>
             </div>
             <div class="card">
               <img src="images/image5.jpg" class="card-img-top" alt="dress" />
+              <i class="bi bi-heart like-icon"></i>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">300$</p>
@@ -273,6 +423,39 @@
             </div>
             <div class="card">
               <img src="images/image3.jpg" class="card-img-top" alt="dress" />
+              <i class="bi bi-heart like-icon"></i>
+              <div class="card-body">
+                <p class="card-title">Sample Dress</p>
+                <p class="card-text">150$</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/image3.jpg" class="card-img-top" alt="dress" />
+              <i class="bi bi-heart like-icon"></i>
+              <div class="card-body">
+                <p class="card-title">Sample Dress</p>
+                <p class="card-text">150$</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/image3.jpg" class="card-img-top" alt="dress" />
+              <i class="bi bi-heart like-icon"></i>
+              <div class="card-body">
+                <p class="card-title">Sample Dress</p>
+                <p class="card-text">150$</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/image3.jpg" class="card-img-top" alt="dress" />
+              <i class="bi bi-heart like-icon"></i>
+              <div class="card-body">
+                <p class="card-title">Sample Dress</p>
+                <p class="card-text">150$</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/image3.jpg" class="card-img-top" alt="dress" />
+              <i class="bi bi-heart like-icon"></i>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">150$</p>
@@ -280,13 +463,31 @@
             </div>
             <div class="card">
               <img src="images/image1.jpg" class="card-img-top" alt="dress" />
+              <i class="bi bi-heart like-icon"></i>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">200$</p>
+                <div class="swatch-container">
+                  <button class="prev">-</button>
+                  <div class="swatch-wrapper">
+                    <div class="swatches">
+                      <div class="swatch" style="background-color: red"></div>
+                      <div class="swatch" style="background-color: blue"></div>
+                      <div class="swatch" style="background-color: green"></div>
+                      <div
+                        class="swatch"
+                        style="background-color: yellow"
+                      ></div>
+                      <div class="swatch" style="background-color: black"></div>
+                    </div>
+                  </div>
+                  <button class="next">+</button>
+                </div>
               </div>
             </div>
             <div class="card">
               <img src="images/image5.jpg" class="card-img-top" alt="dress" />
+              <i class="bi bi-heart like-icon"></i>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">300$</p>
@@ -294,9 +495,32 @@
             </div>
             <div class="card">
               <img src="images/image5.jpg" class="card-img-top" alt="dress" />
+              <i class="bi bi-heart like-icon"></i>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">300$</p>
+                <div class="swatch-container">
+                  <button class="prev">-</button>
+                  <div class="swatch-wrapper">
+                    <div class="swatches">
+                      <div
+                        class="swatch"
+                        style="background-color: rgb(150, 144, 144)"
+                      ></div>
+                      <div class="swatch" style="background-color: blue"></div>
+                      <div
+                        class="swatch"
+                        style="background-color: rgb(17, 50, 128)"
+                      ></div>
+                      <div
+                        class="swatch"
+                        style="background-color: yellow"
+                      ></div>
+                      <div class="swatch" style="background-color: black"></div>
+                    </div>
+                  </div>
+                  <button class="next">+</button>
+                </div>
               </div>
             </div>
             <!-- more cards... -->
@@ -305,37 +529,34 @@
             <div class="col-3navbar-area">
               <nav class="nav justify-content-end">
                 <a class="nav-link text-black" href="#">1-30 of 99 item</a>
-                <a
+                <button
+                  id="viewAllBottom"
                   class="nav-link text-black text-decoration-underline"
                   href="#"
-                  >View all</a
                 >
+                  View all
+                </button>
               </nav>
             </div>
             <div class="col-9 d-flex justify-content-center">
-              <button class="btn rounded-0 border-3 border-black w-50">
+              <button
+                id="showMore"
+                class="btn rounded-0 border-3 border-black w-50"
+              >
                 SHOW MORE
               </button>
             </div>
           </div>
+          <!-- Pagination  *************************** -->
+          <nav
+            aria-label="Page navigation example"
+            class="d-flex justify-content-center mt-4"
+          >
+            <ul id="pagination" class="pagination"></ul>
+          </nav>
         </section>
       </div>
       <div class="overlay"></div>
-      <!-- <div class="end-Of-Main-Content mt-5 mb-3 d-flex w-100">
-        <div class="col-3navbar-area">
-          <nav class="nav justify-content-end">
-            <a class="nav-link text-black" href="#">1-30 of 99 item</a>
-            <a class="nav-link text-black text-decoration-underline" href="#"
-              >View all</a
-            >
-          </nav>
-        </div>
-        <div class="col-9 d-flex justify-content-center">
-          <button class="btn rounded-0 border-3 border-black w-50">
-            SHOW MORE
-          </button>
-        </div>
-      </div> -->
     </main>
     <!-- footer  -->
     <footer class="mt-5 border-top border-1 border-black pt-3 px-3">
@@ -453,12 +674,72 @@
       </table>
     </footer>
 
+    <!-- log in Modal -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <form id="loginForm" class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Log In</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="loginError" class="alert alert-danger d-none"></div>
+            <div class="mb-3">
+              <label for="emailInput" class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="emailInput"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="passwordInput" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="passwordInput"
+                required
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Log In</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- for pages and pagination -->
+    <script src="pagesControll.js"></script>
+    <!-- for  sidebar -->
     <script src="index.js"></script>
+    <!-- for toggle the filter -->
     <script src="filterControl.js"></script>
+    <!-- for select filter option -->
+    <script src="filterOptions.js"></script>
+    <!-- for cards layout -->
     <script src="layout.js"></script>
+    <!-- for colors in card -->
+    <script src="swatchesControl.js"></script>
+    <!-- handel add to fav and log in  -->
+    <script src="handellogin.js"></script>
+    <!-- for search input control -->
+    <script src="searchControll.js"></script>
   </body>
 </html>

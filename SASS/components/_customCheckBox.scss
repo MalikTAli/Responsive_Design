@@ -1,0 +1,35 @@
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  font-size: 16px;
+  margin: 8px 0;
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    &:checked + .checkmark {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: -4px;
+        width: 25px; // width of the /
+        height: 2px;
+        background-color: #333;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  //   the box
+  .checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+    box-sizing: border-box;
+  }
+}

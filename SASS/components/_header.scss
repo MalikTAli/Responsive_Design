@@ -82,4 +82,52 @@
       width: 100%;
     }
   }
+
+  .search-container {
+    width: 100%; //  full width
+    display: flex;
+    justify-content: flex-end; // input at the right
+    padding: 10px;
+
+    .search-box {
+      display: flex;
+      border: 1px solid #ddd;
+      border-radius: 50px;
+      overflow: hidden;
+
+      input {
+        border: none;
+        outline: none;
+        padding: 8px 15px;
+        flex: 1;
+        border-radius: 50px 0 0 50px;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      button {
+        border-radius: 0 50px 50px 0;
+      }
+    }
+
+    @include bp.mobile {
+      .search-box {
+        width: 100%;
+      }
+    }
+
+    @include bp.tablet {
+      .search-box {
+        width: 100%;
+      }
+    }
+
+    @include bp.desktop {
+      .search-box {
+        width: 30%;
+      }
+    }
+  }
 }

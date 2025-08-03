@@ -1,5 +1,36 @@
-.color-box {
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
+.swatch-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  .swatch-wrapper {
+    width: 120px; /* 3  × (30px + 10px margin) */
+    overflow: hidden;
+    .swatches {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+      .swatch {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #ddd;
+
+        margin-right: 10px;
+        flex-shrink: 0;
+      }
+    }
+  }
+  button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 4px;
+  }
+  button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.2;
+  }
 }

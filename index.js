@@ -6,9 +6,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.querySelector(".overlay");
   const cardsContainer = document.querySelector(".cards-container");
 
+  function handleResize() {
+    const width = window.innerWidth;
+
+    if (width >= 1024) {
+      // Desktop
+      sidebar.classList.remove("active");
+      overlay?.classList.remove("active");
+
+      if (
+        !sidebar.classList.contains("hidden") &&
+        !cardsContainer.classList.contains("col-9")
+      ) {
+        sidebar.classList.add("hidden");
+        cardsContainer.classList.remove("col-9");
+        cardsContainer.classList.add("col-12");
+      }
+    } else {
+      // Tablet / Mobile
+      sidebar.classList.remove("hidden");
+      cardsContainer.classList.remove("col-9");
+      cardsContainer.classList.add("col-12");
+    }
+  }
+
   if (showFilterBtn) {
     showFilterBtn.addEventListener("click", () => {
-      sidebar.classList.toggle("hidden"); // just for desktob
+      sidebar.classList.toggle("hidden"); // just on desktop
       if (sidebar.classList.contains("hidden")) {
         cardsContainer.classList.remove("col-9");
         cardsContainer.classList.add("col-12");
@@ -34,4 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       overlay.classList.remove("active");
     });
   }
+
+  handleResize();
+  window.addEventListener("resize", handleResize);
 });
