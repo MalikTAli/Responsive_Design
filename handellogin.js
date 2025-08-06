@@ -39,17 +39,23 @@ document.addEventListener("DOMContentLoaded", () => {
         const errorDiv = document.getElementById("loginError");
         errorDiv.textContent = "Invalid email or password.";
         errorDiv.classList.remove("d-none");
+        errorDiv.focus();
       }
     });
   }
 
   // like icon logic
-  document.querySelectorAll(".like-icon").forEach((icon) => {
-    icon.addEventListener("click", () => {
+  document.querySelectorAll(".like-icon").forEach((btn) => {
+    btn.addEventListener("click", () => {
       const currentUser = localStorage.getItem("currentUser");
 
       if (currentUser) {
-        icon.classList.toggle("active");
+        const isPressed = btn.getAttribute("aria-pressed") === "true";
+        btn.setAttribute("aria-pressed", String(!isPressed));
+        btn.setAttribute(
+          "aria-label",
+          isPressed ? "Add to favorites" : "Remove from favorites"
+        );
       } else {
         loginModal.show();
       }

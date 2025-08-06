@@ -333,8 +333,10 @@
   color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: color 0.3s ease;
+  background: none;
+  border: none;
 }
-.cards-container .card .like-icon.active {
+.cards-container .card .like-icon[aria-pressed=true] {
   color: red;
 }
 

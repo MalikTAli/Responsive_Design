@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const checkboxes = document.querySelectorAll(
-    "#type-list input[type='checkbox']"
+    ".type-list input[type='checkbox']"
   );
   const selectedContainer = document.getElementById("selected-options");
 

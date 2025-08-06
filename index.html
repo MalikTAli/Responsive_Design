@@ -23,17 +23,37 @@
         <div class="row align-items-center">
           <!-- Left -->
           <div class="col-3 d-flex align-items-center">
-            <button class="menu-btn btn me-2">☰</button>
-            <h1 class="logo-left m-0">CULB MONACO</h1>
+            <button
+              class="menu-btn btn me-2"
+              aria-label="open main navbar menu"
+            >
+              ☰
+            </button>
+            <h1 class="logo-left m-0">
+              <a
+                href="#"
+                aria-label="Club Monaco homepage"
+                class="text-decoration-none text-black"
+                >CULB MONACO</a
+              >
+            </h1>
           </div>
 
           <!-- Center -->
           <div class="col-6 d-flex justify-content-center">
             <!-- logo for mobile   -->
-            <h1 class="logo-center m-0">CULB MONACO</h1>
+            <h1 class="logo-center m-0">
+              <a
+                href="#"
+                aria-label="Club Monaco homepage"
+                class="text-decoration-none text-black"
+              >
+                CULB MONACO</a
+              >
+            </h1>
 
             <!-- nav just for desktop  -->
-            <nav class="nav gap-1">
+            <nav class="nav gap-1" aria-label="Main navigation">
               <a class="nav-link text-black" href="#">NEW ARRIVALS</a>
               <a class="nav-link text-black" href="#">WOMEN</a>
               <a class="nav-link text-black" href="#">MEN</a>
@@ -45,27 +65,57 @@
 
           <!-- Right -->
           <div class="col-3 d-flex justify-content-end gap-3 header-icons">
-            <a href="#" class="text-black"><i class="bi bi-heart"></i></a>
-            <a href="#" class="text-black" id="searchToggle"
+            <a
+              href="#"
+              class="text-black align-self-center"
+              aria-label="View wishlist"
+              ><i class="bi bi-heart"></i
+            ></a>
+            <a
+              href="#"
+              class="text-black align-self-center"
+              id="searchToggle"
+              aria-label="Search products"
               ><i class="bi bi-search"></i
             ></a>
-            <!-- Person Icon with Dropdown -->
+            <!-- Person Icon with Dropdown hi -->
             <div class="dropdown">
-              <a
-                href="#"
-                class="text-black dropdown-toggle"
+              <button
+                class="btn text-black dropdown-toggle"
                 id="personDropdown"
-                role="button"
                 data-bs-toggle="dropdown"
+                aria-haspopup="true"
                 aria-expanded="false"
+                aria-controls="userMenu"
+                aria-label="User account menu"
               >
-                <i class="bi bi-person fs-4"></i>
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="personDropdown">
-                <li>
-                  <a class="dropdown-item" href="#" id="loginBtn">Log in</a>
+                <i class="bi bi-person fs-4" aria-hidden="true"></i>
+              </button>
+
+              <ul
+                class="dropdown-menu"
+                id="userMenu"
+                aria-labelledby="personDropdown"
+                role="menu"
+              >
+                <li role="none">
+                  <button
+                    type="button"
+                    class="dropdown-item"
+                    id="loginBtn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#loginModal"
+                    aria-haspopup="dialog"
+                    aria-controls="loginModal"
+                  >
+                    Log in
+                  </button>
                 </li>
-                <li><a class="dropdown-item" href="#">Create account</a></li>
+                <li role="none">
+                  <a class="dropdown-item" href="#" role="menuitem"
+                    >Create account</a
+                  >
+                </li>
               </ul>
             </div>
           </div>
@@ -73,23 +123,32 @@
       </div>
       <!-- search -->
       <div class="search-container d-none">
-        <div class="search-box">
+        <form class="search-box">
+          <label for="searchInput" class="visually-hidden"
+            >Search for products</label
+          >
           <input
+            id="searchInput"
             type="text"
             class="form-control"
             placeholder="Search for products..."
-            aria-label="Search"
+            aria-label="Search for products"
           />
           <button class="btn btn-dark px-4" type="button">
             <i class="bi bi-search"></i>
+            <span class="visually-hidden">Search</span>
           </button>
-        </div>
+        </form>
       </div>
       <!-- end search -->
-      <p class="offers text-center py-3 border-bottom border-2 bg-white">
+      <aside
+        class="offers text-center py-3 border-bottom border-2 bg-white"
+        role="note"
+        aria-label="Promotional offer"
+      >
         FREE SHIPPING ON ORDERS OF $150 OR MORE WITH CODE <b>FREESHIP. </b
         ><a href="#" class="text-black"> See details</a>
-      </p>
+      </aside>
     </header>
 
     <!-- start the main content -->
@@ -114,8 +173,10 @@
         <div class="col-3 show-filter">
           <button
             class="border-0 bg-white d-flex align-items-center gap-2 w-100"
+            aria-expanded="false"
+            aria-controls="sidebarFilters"
           >
-            <i class="bi bi-sliders"></i>
+            <i class="bi bi-sliders" aria-hidden="true"></i>
             SHOW FILTER
           </button>
         </div>
@@ -162,7 +223,11 @@
       <!--  here the sidbar and the cards list -->
       <div class="row main-content">
         <!-- Sidebar -->
-        <aside class="col-3 sidebar bg-white p-3 hidden border-0">
+        <aside
+          id="sidebarFilters"
+          class="col-3 sidebar bg-white p-3 hidden border-0"
+          aria-label="Product filters"
+        >
           <div
             class="d-flex justify-content-between align-items-center mb-3 d-desktop-none"
           >
@@ -187,30 +252,44 @@
           </select>
           <div class="filter-section">
             <!-- f1 -->
-            <div
-              class="filter-header d-flex justify-content-between align-items-center border-bottom pb-2 mt-3"
+            <button
+              class="w-100 bg-white border-0 filter-header d-flex justify-content-between align-items-center border-bottom pb-2 mt-3"
+              aria-expanded="false"
+              aria-controls="filter-type"
             >
               <h6>Type</h6>
               <i class="bi bi-plus toggle-icon fs-4"></i>
-            </div>
-            <ul id="type-list" class="list-unstyled d-none">
+            </button>
+            <ul id="filter-type" class="type-list list-unstyled d-none">
               <li class="mt-2">
-                <label class="custom-checkbox">
-                  <input type="checkbox" value="Maxi(19)" />
+                <label for="filter-type-maxi" class="custom-checkbox">
+                  <input
+                    id="filter-type-maxi"
+                    type="checkbox"
+                    value="Maxi(19)"
+                  />
                   <span class="checkmark"></span>
                   Maxi(19)
                 </label>
               </li>
               <li class="mt-2">
-                <label class="custom-checkbox">
-                  <input type="checkbox" value="Midi(9)" />
+                <label for="filter-type-midi" class="custom-checkbox">
+                  <input
+                    id="filter-type-midi"
+                    type="checkbox"
+                    value="Midi(9)"
+                  />
                   <span class="checkmark"></span>
                   Midi(9)
                 </label>
               </li>
               <li class="mt-2">
-                <label class="custom-checkbox">
-                  <input type="checkbox" value="Mini(19)" />
+                <label for="filter-type-mini" class="custom-checkbox">
+                  <input
+                    id="filter-type-mini"
+                    type="checkbox"
+                    value="Mini(19)"
+                  />
                   <span class="checkmark"></span>
                   Mini(19)
                 </label>
@@ -218,44 +297,46 @@
             </ul>
 
             <!-- f2 -->
-            <div
-              class="filter-header d-flex justify-content-between align-items-center border-bottom pb-2 mt-3"
+            <button
+              class="w-100 bg-white border-0 filter-header d-flex justify-content-between align-items-center border-bottom pb-2 mt-3"
+              aria-expanded="false"
+              aria-controls="filter-size"
             >
               <h6>Size</h6>
               <i class="bi bi-plus toggle-icon fs-4"></i>
-            </div>
-            <ul id="type-list" class="list-unstyled d-none">
+            </button>
+            <ul id="filter-size" class="type-list list-unstyled d-none">
               <li class="mt-2">
-                <label class="custom-checkbox">
-                  <input type="checkbox" value="S" />
+                <label for="filter-size-small" class="custom-checkbox">
+                  <input id="filter-size-small" type="checkbox" value="S" />
                   <span class="checkmark"></span>
                   S
                 </label>
               </li>
               <li class="mt-2">
-                <label class="custom-checkbox">
-                  <input type="checkbox" value="M" />
+                <label for="filter-size-mideim" class="custom-checkbox">
+                  <input id="filter-size-mideim" type="checkbox" value="M" />
                   <span class="checkmark"></span>
                   M
                 </label>
               </li>
               <li class="mt-2">
-                <label class="custom-checkbox">
-                  <input type="checkbox" value="L" />
+                <label for="filter-size-large" class="custom-checkbox">
+                  <input id="filter-size-large" type="checkbox" value="L" />
                   <span class="checkmark"></span>
                   L
                 </label>
               </li>
               <li class="mt-2">
-                <label class="custom-checkbox">
-                  <input type="checkbox" value="XL" />
+                <label for="filter-size-Xlarge" class="custom-checkbox">
+                  <input id="filter-size-Xlarge" type="checkbox" value="XL" />
                   <span class="checkmark"></span>
                   XL
                 </label>
               </li>
               <li class="mt-2">
-                <label class="custom-checkbox">
-                  <input type="checkbox" value="XXL" />
+                <label for="filter-size-XXlarge" class="custom-checkbox">
+                  <input id="filter-size-XXlarge" type="checkbox" value="XXL" />
                   <span class="checkmark"></span>
                   XXL
                 </label>
@@ -263,37 +344,47 @@
             </ul>
 
             <!-- f3 -->
-            <div
-              class="filter-header d-flex justify-content-between align-items-center border-bottom pb-2 mt-3"
+            <button
+              class="w-100 bg-white border-0 filter-header d-flex justify-content-between align-items-center border-bottom pb-2 mt-3"
+              aria-expanded="false"
+              aria-controls="filter-color"
             >
               <h6>Color</h6>
               <i class="bi bi-plus toggle-icon fs-4"></i>
-            </div>
-            <ul id="type-list" class="list-unstyled d-none">
+            </button>
+            <ul id="filter-color" class="type-list list-unstyled d-none">
               <li class="mt-2">
-                <label class="custom-checkbox">
-                  <input type="checkbox" value="Red" />
+                <label for="filter-color-Red" class="custom-checkbox">
+                  <input id="filter-color-Red" type="checkbox" value="Red" />
                   <span class="checkmark"></span>
                   Red
                 </label>
               </li>
               <li class="mt-2">
-                <label class="custom-checkbox">
-                  <input type="checkbox" value="Blue" />
+                <label for="filter-color-Blue" class="custom-checkbox">
+                  <input id="filter-color-Blue" type="checkbox" value="Blue" />
                   <span class="checkmark"></span>
                   Blue
                 </label>
               </li>
               <li class="mt-2">
-                <label class="custom-checkbox">
-                  <input type="checkbox" value="White" />
+                <label for="filter-color-White" class="custom-checkbox">
+                  <input
+                    id="filter-color-White"
+                    type="checkbox"
+                    value="White"
+                  />
                   <span class="checkmark"></span>
                   White
                 </label>
               </li>
               <li class="mt-2">
-                <label class="custom-checkbox">
-                  <input type="checkbox" value="Black" />
+                <label for="filter-color-Black" class="custom-checkbox">
+                  <input
+                    id="filter-color-Black"
+                    type="checkbox"
+                    value="Black"
+                  />
                   <span class="checkmark"></span>
                   Black
                 </label>
@@ -301,37 +392,51 @@
             </ul>
 
             <!-- f4 -->
-            <div
-              class="filter-header d-flex justify-content-between align-items-center border-bottom pb-2 mt-3"
+            <button
+              class="w-100 bg-white border-0 filter-header d-flex justify-content-between align-items-center border-bottom pb-2 mt-3"
+              aria-expanded="false"
+              aria-controls="filter-price"
             >
               <h6>Price</h6>
               <i class="bi bi-plus toggle-icon fs-4"></i>
-            </div>
-            <ul id="type-list" class="list-unstyled d-none">
+            </button>
+            <ul id="filter-price" class="type-list list-unstyled d-none">
               <li class="mt-2">
-                <label class="custom-checkbox">
-                  <input type="checkbox" value="50$-100$" />
+                <label for="filter-price-50" class="custom-checkbox">
+                  <input
+                    id="filter-price-50"
+                    type="checkbox"
+                    value="50$-100$"
+                  />
                   <span class="checkmark"></span>
                   50$-100$
                 </label>
               </li>
               <li class="mt-2">
-                <label class="custom-checkbox">
-                  <input type="checkbox" value="100$-200$" />
+                <label for="filter-price-100" class="custom-checkbox">
+                  <input
+                    id="filter-price-100"
+                    type="checkbox"
+                    value="100$-200$"
+                  />
                   <span class="checkmark"></span>
                   100$-200$
                 </label>
               </li>
               <li class="mt-2">
-                <label class="custom-checkbox">
-                  <input type="checkbox" value="200$-300$" />
+                <label for="filter-price-200" class="custom-checkbox">
+                  <input
+                    id="filter-price-200"
+                    type="checkbox"
+                    value="200$-300$"
+                  />
                   <span class="checkmark"></span>
                   200$-300$
                 </label>
               </li>
               <li class="mt-2">
-                <label class="custom-checkbox">
-                  <input type="checkbox" value="+300$" />
+                <label for="filter-price-300" class="custom-checkbox">
+                  <input id="filter-price-300" type="checkbox" value="+300$" />
                   <span class="checkmark"></span>
                   +300$
                 </label>
@@ -349,7 +454,13 @@
           <div class="cards-grid">
             <div class="card">
               <img src="images/image1.jpg" class="card-img-top" alt="dress" />
-              <i class="bi bi-heart like-icon"></i>
+              <button
+                class="like-icon btn p-0"
+                aria-pressed="false"
+                aria-label="Add to favorites"
+              >
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">50$</p>
@@ -357,14 +468,31 @@
                   <button class="prev">-</button>
                   <div class="swatch-wrapper">
                     <div class="swatches">
-                      <div class="swatch" style="background-color: red"></div>
-                      <div class="swatch" style="background-color: blue"></div>
-                      <div class="swatch" style="background-color: green"></div>
-                      <div
+                      <button
+                        class="swatch"
+                        style="background-color: red"
+                        aria-label="Select red color"
+                      ></button>
+                      <button
+                        class="swatch"
+                        style="background-color: blue"
+                        aria-label="Select blue color"
+                      ></button>
+                      <button
+                        class="swatch"
+                        style="background-color: green"
+                        aria-label="Select green color"
+                      ></button>
+                      <button
                         class="swatch"
                         style="background-color: yellow"
-                      ></div>
-                      <div class="swatch" style="background-color: black"></div>
+                        aria-label="Select yellow color"
+                      ></button>
+                      <button
+                        class="swatch"
+                        style="background-color: black"
+                        aria-label="Select black color"
+                      ></button>
                     </div>
                   </div>
                   <button class="next">+</button>
@@ -374,7 +502,13 @@
 
             <div class="card">
               <img src="images/image2.jpg" class="card-img-top" alt="dress" />
-              <i class="bi bi-heart like-icon"></i>
+              <button
+                class="like-icon btn p-0"
+                aria-pressed="false"
+                aria-label="Add to favorites"
+              >
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">50$</p>
@@ -383,7 +517,13 @@
 
             <div class="card">
               <img src="images/image4.jpg" class="card-img-top" alt="dress" />
-              <i class="bi bi-heart like-icon"></i>
+              <button
+                class="like-icon btn p-0"
+                aria-pressed="false"
+                aria-label="Add to favorites"
+              >
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">50$</p>
@@ -391,7 +531,13 @@
             </div>
             <div class="card">
               <img src="images/image3.jpg" class="card-img-top" alt="dress" />
-              <i class="bi bi-heart like-icon"></i>
+              <button
+                class="like-icon btn p-0"
+                aria-pressed="false"
+                aria-label="Add to favorites"
+              >
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">150$</p>
@@ -399,14 +545,31 @@
                   <button class="prev">-</button>
                   <div class="swatch-wrapper">
                     <div class="swatches">
-                      <div class="swatch" style="background-color: red"></div>
-                      <div class="swatch" style="background-color: blue"></div>
-                      <div class="swatch" style="background-color: green"></div>
-                      <div
+                      <button
+                        class="swatch"
+                        style="background-color: red"
+                        aria-label="Select red color"
+                      ></button>
+                      <button
+                        class="swatch"
+                        style="background-color: blue"
+                        aria-label="Select blue color"
+                      ></button>
+                      <button
+                        class="swatch"
+                        style="background-color: green"
+                        aria-label="Select green color"
+                      ></button>
+                      <button
                         class="swatch"
                         style="background-color: yellow"
-                      ></div>
-                      <div class="swatch" style="background-color: black"></div>
+                        aria-label="Select yellow color"
+                      ></button>
+                      <button
+                        class="swatch"
+                        style="background-color: black"
+                        aria-label="Select black color"
+                      ></button>
                     </div>
                   </div>
                   <button class="next">+</button>
@@ -415,7 +578,13 @@
             </div>
             <div class="card">
               <img src="images/image5.jpg" class="card-img-top" alt="dress" />
-              <i class="bi bi-heart like-icon"></i>
+              <button
+                class="like-icon btn p-0"
+                aria-pressed="false"
+                aria-label="Add to favorites"
+              >
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">300$</p>
@@ -423,7 +592,13 @@
             </div>
             <div class="card">
               <img src="images/image3.jpg" class="card-img-top" alt="dress" />
-              <i class="bi bi-heart like-icon"></i>
+              <button
+                class="like-icon btn p-0"
+                aria-pressed="false"
+                aria-label="Add to favorites"
+              >
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">150$</p>
@@ -431,7 +606,13 @@
             </div>
             <div class="card">
               <img src="images/image3.jpg" class="card-img-top" alt="dress" />
-              <i class="bi bi-heart like-icon"></i>
+              <button
+                class="like-icon btn p-0"
+                aria-pressed="false"
+                aria-label="Add to favorites"
+              >
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">150$</p>
@@ -439,7 +620,13 @@
             </div>
             <div class="card">
               <img src="images/image3.jpg" class="card-img-top" alt="dress" />
-              <i class="bi bi-heart like-icon"></i>
+              <button
+                class="like-icon btn p-0"
+                aria-pressed="false"
+                aria-label="Add to favorites"
+              >
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">150$</p>
@@ -447,7 +634,13 @@
             </div>
             <div class="card">
               <img src="images/image3.jpg" class="card-img-top" alt="dress" />
-              <i class="bi bi-heart like-icon"></i>
+              <button
+                class="like-icon btn p-0"
+                aria-pressed="false"
+                aria-label="Add to favorites"
+              >
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">150$</p>
@@ -455,7 +648,13 @@
             </div>
             <div class="card">
               <img src="images/image3.jpg" class="card-img-top" alt="dress" />
-              <i class="bi bi-heart like-icon"></i>
+              <button
+                class="like-icon btn p-0"
+                aria-pressed="false"
+                aria-label="Add to favorites"
+              >
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">150$</p>
@@ -463,7 +662,13 @@
             </div>
             <div class="card">
               <img src="images/image1.jpg" class="card-img-top" alt="dress" />
-              <i class="bi bi-heart like-icon"></i>
+              <button
+                class="like-icon btn p-0"
+                aria-pressed="false"
+                aria-label="Add to favorites"
+              >
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">200$</p>
@@ -471,14 +676,31 @@
                   <button class="prev">-</button>
                   <div class="swatch-wrapper">
                     <div class="swatches">
-                      <div class="swatch" style="background-color: red"></div>
-                      <div class="swatch" style="background-color: blue"></div>
-                      <div class="swatch" style="background-color: green"></div>
-                      <div
+                      <button
+                        class="swatch"
+                        style="background-color: red"
+                        aria-label="Select red color"
+                      ></button>
+                      <button
+                        class="swatch"
+                        style="background-color: blue"
+                        aria-label="Select blue color"
+                      ></button>
+                      <button
+                        class="swatch"
+                        style="background-color: green"
+                        aria-label="Select green color"
+                      ></button>
+                      <button
                         class="swatch"
                         style="background-color: yellow"
-                      ></div>
-                      <div class="swatch" style="background-color: black"></div>
+                        aria-label="Select yellow color"
+                      ></button>
+                      <button
+                        class="swatch"
+                        style="background-color: black"
+                        aria-label="Select black color"
+                      ></button>
                     </div>
                   </div>
                   <button class="next">+</button>
@@ -487,7 +709,13 @@
             </div>
             <div class="card">
               <img src="images/image5.jpg" class="card-img-top" alt="dress" />
-              <i class="bi bi-heart like-icon"></i>
+              <button
+                class="like-icon btn p-0"
+                aria-pressed="false"
+                aria-label="Add to favorites"
+              >
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">300$</p>
@@ -495,7 +723,13 @@
             </div>
             <div class="card">
               <img src="images/image5.jpg" class="card-img-top" alt="dress" />
-              <i class="bi bi-heart like-icon"></i>
+              <button
+                class="like-icon btn p-0"
+                aria-pressed="false"
+                aria-label="Add to favorites"
+              >
+                <i class="bi bi-heart" aria-hidden="true"></i>
+              </button>
               <div class="card-body">
                 <p class="card-title">Sample Dress</p>
                 <p class="card-text">300$</p>
@@ -503,20 +737,31 @@
                   <button class="prev">-</button>
                   <div class="swatch-wrapper">
                     <div class="swatches">
-                      <div
+                      <button
                         class="swatch"
                         style="background-color: rgb(150, 144, 144)"
-                      ></div>
-                      <div class="swatch" style="background-color: blue"></div>
-                      <div
+                        aria-label="Select gray color"
+                      ></button>
+                      <button
+                        class="swatch"
+                        style="background-color: blue"
+                        aria-label="Select blue color"
+                      ></button>
+                      <button
                         class="swatch"
                         style="background-color: rgb(17, 50, 128)"
-                      ></div>
-                      <div
+                        aria-label="Select navy blue color"
+                      ></button>
+                      <button
                         class="swatch"
                         style="background-color: yellow"
-                      ></div>
-                      <div class="swatch" style="background-color: black"></div>
+                        aria-label="Select yellow color"
+                      ></button>
+                      <button
+                        class="swatch"
+                        style="background-color: black"
+                        aria-label="Select black color"
+                      ></button>
                     </div>
                   </div>
                   <button class="next">+</button>
@@ -549,7 +794,7 @@
           </div>
           <!-- Pagination  *************************** -->
           <nav
-            aria-label="Page navigation example"
+            aria-label="Page navigation"
             class="d-flex justify-content-center mt-4"
           >
             <ul id="pagination" class="pagination"></ul>
@@ -570,33 +815,41 @@
         </p>
       </div>
       <!-- social -->
-      <div class="social d-flex gap-3 justify-content-center">
+      <section class="social d-flex gap-3 justify-content-center">
         <p class="fs-3">#CULBMONACO</p>
         <a
           href="https://www.instagram.com"
           target="_blank"
           class="text-dark fs-4"
+          aria-label="Visit our Instagram"
         >
-          <i class="bi bi-instagram"></i>
+          <i class="bi bi-instagram" aria-hidden="true"></i>
         </a>
         <a
           href="https://www.facebook.com"
           target="_blank"
           class="text-dark fs-4"
+          aria-label="Visit our Facebook"
         >
-          <i class="bi bi-facebook"></i>
+          <i class="bi bi-facebook" aria-hidden="true"></i>
         </a>
         <a
           href="https://www.twitter.com"
           target="_blank"
           class="text-dark fs-4"
+          aria-label="Visit our Twitter"
         >
-          <i class="bi bi-twitter"></i>
+          <i class="bi bi-twitter" aria-hidden="true"></i>
         </a>
-        <a href="https://www.tiktok.com" target="_blank" class="text-dark fs-4">
-          <i class="bi bi-tiktok"></i>
+        <a
+          href="https://www.tiktok.com"
+          target="_blank"
+          class="text-dark fs-4"
+          aria-label="Visit our TikTok"
+        >
+          <i class="bi bi-tiktok" aria-hidden="true"></i>
         </a>
-      </div>
+      </section>
       <!-- table -->
       <table class="table table-borderless text-center w-100">
         <colgroup>
@@ -619,12 +872,23 @@
             <td>Track Your Order</td>
             <td>Our Story</td>
             <td>
-              <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search" />
-                <button class="btn bg-black text-white" type="submit">
-                  SUBMIT
-                </button>
-              </div>
+              <form>
+                <label for="footer-email" class="visually-hidden"
+                  >Email address</label
+                >
+                <div class="input-group mb-3">
+                  <input
+                    type="email"
+                    id="footer-email"
+                    class="form-control"
+                    placeholder="ENTER EMAIL ADDRESS"
+                    required
+                  />
+                  <button class="btn bg-black text-white" type="submit">
+                    SUBMIT
+                  </button>
+                </div>
+              </form>
             </td>
           </tr>
 
@@ -679,10 +943,11 @@
       class="modal fade"
       id="loginModal"
       tabindex="-1"
+      role="dialog"
       aria-labelledby="loginModalLabel"
-      aria-hidden="true"
+      aria-modal="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog" role="document">
         <form id="loginForm" class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="loginModalLabel">Log In</h5>
@@ -694,14 +959,21 @@
             ></button>
           </div>
           <div class="modal-body">
-            <div id="loginError" class="alert alert-danger d-none"></div>
+            <div
+              id="loginError"
+              class="alert alert-danger d-none"
+              role="alert"
+              aria-live="assertive"
+            ></div>
             <div class="mb-3">
               <label for="emailInput" class="form-label">Email address</label>
               <input
                 type="email"
                 class="form-control"
                 id="emailInput"
+                name="email"
                 required
+                aria-required="true"
               />
             </div>
             <div class="mb-3">
@@ -710,7 +982,9 @@
                 type="password"
                 class="form-control"
                 id="passwordInput"
+                name="password"
                 required
+                aria-required="true"
               />
             </div>
           </div>
